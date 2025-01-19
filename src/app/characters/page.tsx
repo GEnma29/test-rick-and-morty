@@ -34,10 +34,10 @@ export default function CharacterList() {
     // list of characters
     return (
 
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mx-auto max-w-4xl">
+        <div className="mx-auto w-full lg:max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mx-auto w-full py-2 lg:max-w-4xl">
                 {/* search character  */}
-                <div className="flex  mt-16 mb-4 items-center justify-between">
+                <div className="flex flex-wrap items-center justify-between gap-4 mb-4">
                     <h1 className="text-3xl font-bold tracking-tight text-gray-200">Characters</h1>
                     <div className="flex items-center">
                         <input
@@ -57,7 +57,7 @@ export default function CharacterList() {
                     </div>
                 </div>
                 {/* list of characters */}
-                <ul role="list" className="grid mb-8 grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+                <ul role="list" className="grid mb-8 sm:px-4 grid-col-1 lg:grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
                     {isLoading
                         ? Array(8).fill(0).map((_, index) => <Skeleton key={index} />)
                         :
@@ -66,7 +66,7 @@ export default function CharacterList() {
                                 <Image
                                     width={100}
                                     height={100}
-                                    className="object-cover w-full h-[200px] rounded-lg"
+                                    className="object-cover w-full lg:h-[200px] rounded-lg"
                                     src={character.image}
                                     alt={character.name}
                                 />
