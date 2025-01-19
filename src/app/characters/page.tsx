@@ -93,13 +93,13 @@ export default function CharacterList() {
                     </div>
                     <div className="flex flex-1 justify-between sm:justify-end">
                         <button
-                            onClick={() => setPageIndex(pageIndex - 1)}
+                            onClick={() => setPageIndex(pageIndex > 1 ? pageIndex - 1 : 1)}
                             className="relative inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
                         >
                             Previous
                         </button>
                         <button
-                            onClick={() => setPageIndex(pageIndex + 1)}
+                            onClick={() => setPageIndex(pageIndex < totalPages ? pageIndex + 1 : pageIndex)}
                             className="relative ml-3 inline-flex items-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus-visible:outline-offset-0"
                         >
                             Next
