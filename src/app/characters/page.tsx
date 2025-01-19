@@ -16,16 +16,18 @@ export default function CharacterList() {
     const [pageIndex, setPageIndex] = useState(1);
     const [status, setStatus] = useState('');
     const [name, setName] = useState('');
+    const { setCharacter } = useCharacter();
 
     const { data, error, isLoading } = useSWR(`/character/?page=${pageIndex}&name=${name}&status=${status}`, fetcher);
+
     const { characters, totalPages } = charactersAdapter(data);
 
     if (error) return <div className="text-center text-red-500 mt-8">Failed to load characters. Please try again later.</div>
 
 
-    // context to set the selected character
 
-    const { setCharacter } = useCharacter();
+
+
 
     // handle click on character card
     const handleCharacterClick = (character: Character) => {
