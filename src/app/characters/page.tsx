@@ -57,7 +57,7 @@ export default function CharacterList() {
                     </div>
                 </div>
                 {/* list of characters */}
-                <ul role="list" className="grid mb-8 sm:px-4 grid-col-1 lg:grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
+                <ul role="list" className="grid mb-8 sm:px-4 grid-col-1  gap-x-4 gap-y-8 sm:grid-cols-3 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
                     {isLoading
                         ? Array(8).fill(0).map((_, index) => <Skeleton key={index} />)
                         :
