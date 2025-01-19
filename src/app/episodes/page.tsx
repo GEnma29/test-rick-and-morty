@@ -12,9 +12,11 @@ export default function Episodes() {
 
     const { data, error, isLoading } = useSWR(`/episode/`, fetcher);
 
-    const { episodes, totalPages } = getEpisodesListData(data);
+    const { episodes } = getEpisodesListData(data);
 
     const { setEpisode } = useEpisode();
+
+    if (error) return <div className="text-center text-red-500 mt-8">Failed to load episodes. Please try again later.</div>
 
     const handelEpisodeClick = (episode: Episode) => {
         setEpisode(episode);
